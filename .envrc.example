@@ -1,0 +1,4 @@
+source_up
+
+export NIXPKGS_ALLOW_UNFREE=1
+use flake . --impure
