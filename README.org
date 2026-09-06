@@ -35,6 +35,18 @@ We could also develop more strategic ways to do searches. Some examples:
   - For larger searches, aerial or drone imagery could potentially help identify possible dogs or cats in an area before volunteers begin searching on foot.
 - We could document our learnings and help improve further searches.
 *** Analysis & Research
+A long-running record of sightings could help researchers, civic bodies and animal-welfare groups better understand free-roaming animal populations and how they change over time.
+
+Possible areas of study include:
+- Estimating neighbourhood-level population, distribution and turnover.
+- Studying movement patterns, home ranges and frequently used corridors.
+- Identifying changes in visible health, injuries and other welfare indicators.
+- Understanding relationships with traffic, waste-disposal sites, feeding areas, weather and urban development.
+- Measuring the reach and possible impact of vaccination, sterilisation and other welfare programmes.
+- Improving methods for identifying individual animals from photographs.
+- Helping plan where surveys, vaccination drives, water stations or other interventions may be most useful.
+
+Because community-contributed observations will contain sampling biases, this should not be presented as an authoritative census. Recording survey effort, missing data and confidence levels will be important. Public research outputs should also use aggregated or suitably obscured location data where precise locations could put animals at risk.
 
 ** How you can help?
 *** Donations
