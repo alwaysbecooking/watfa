@@ -1,0 +1,41 @@
+set shell := ["bash", "-euo", "pipefail", "-c"]
+
+# List available commands.
+default:
+    @just --list
+
+# Install dependencies.
+install:
+    pnpm install
+
+# Start the Astro development server in the background.
+dev *args:
+    pnpm exec astro dev --background {{ args }}
+
+# Stop the background development server.
+dev-stop:
+    pnpm exec astro dev stop
+
+# Show the background development server status.
+dev-status:
+    pnpm exec astro dev status
+
+# Show logs from the background development server.
+dev-logs:
+    pnpm exec astro dev logs
+
+# Follow logs from the background development server.
+dev-logs-follow:
+    pnpm exec astro dev logs --follow
+
+# Build the production site.
+build:
+    pnpm build
+
+# Preview the production build locally.
+preview:
+    pnpm preview
+
+# Remove generated build files and Astro's cache.
+clean:
+    rm -rf dist .astro

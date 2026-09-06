@@ -1,1 +1,64 @@
-* Where are the free agents? (WATFA)
+* where are the free agents? (WATFA)
+WATFA is a community-sourced, ongoing public ~dataset~ of street dogs and cats(our free agents) across our neighbourhood. We're focusing on Guwahati at the moment.
+
+Assumption is that, groups of volunteers regularly survey their own neighbourhoods and photograph/document the animals they encounter. People also submit photos/observations in adhoc manner. These observations accumulate over weeks, months and years, creating a longitudinal record of the city's street-animal population.
+
+Where possible, repeated sightings are connected to an individual animal profile. Over time, this creates a history of where and when an animal has been seen and how its appearance has changed. A major part of the project is figuring out how well we can identify animals from photographs using their shape, features, markings and other visual and non-visual attributes, allowing for fuzzy identification later.
+
+** What exactly is this?
+At its core, WATFA is a community sourced ~open public dataset~, not an app/platform. Absolutely not a startup/product.
+
+The interface can change/adopt. It could begin with manual data entry, forms, WhatsApp bots or a website, an app whatever and evolve later. The important thing is the underlying shared dataset and the process for continuously maintaining it.
+
+Primarily the dataset would contain visual and geographical info, which are enough for our system to produce useful insights but adding more metadata like vaccination etc would make the data even more powerful.
+
+** How this can help?
+*** Lost/Found/Relocated
+If an animal suddenly appears in a new area, disappears from its usual area, or resembles an animal reported missing, the dataset can help make that connection. For example, ~X~ reports ~Dogesh Basumatary~ to be missing from ~chandmari~, ~Y~ casually clicks and submits ~Dogesh Basumatary~ in ~zoo rd~ while smoking a gold flake light because they think ~Dogesh~ is cute. The system will identify this to be a likely match, the ~X~ can be notified of a possibility.
+
+Over time, this also gives us a chronology of sightings rather than relying on a single lost poster or social-media post.
+*** Rescue
+While this is not the primary objective but we can possibly also help with reporting animal injury or distress issues and broadcasting it to NGOs/orgs who could help, similar to what the [[https://karunanidhan.app/][Karuna Nidhan]] app does. But we don't want to replace/interfere their usecase/network. So I think a better way would be to build an integration for the same.
+*** Community based strategic lost-animal searches
+The project is not only about the ~creation~ of the ~dataset~ but also the ~usage~ of the ~dataset~. A local network of people who know how to conduct animal searches. If someone loses a cat and has nobody to help, there should ideally already be a group of people nearby who know how to search, distribute posters, document sightings and coordinate information.
+
+Pet searches are usually fragmented. Different people search different streets, post in different groups/socials and often don't know what has already been checked. If volunteers are already searching a neighbourhood for one animal, they can also know which other missing animals they should keep an eye out for.
+
+We could also develop more strategic ways to do searches. Some examples:
+- A missing pet awareness taskforce
+  - The first week after a pet is lost is very crucial, if we can get intel fast, there's good chances we can find them. So a taskforce who helps spread the word in the neighborhood is of immense value.
+  - Many pet owners don't have the capacity to individually go around a neighboordhood and paste posters. A community taskforce could be extremely useful.
+- Knowhow
+  - Knowing which paper to print "MISSING PET" is also important because during monsoon, normal A4 paper gets washed pretty easily.
+  - Which times of the day and places are more likely for spotting
+- Technical capacity
+  - For larger searches, aerial or drone imagery could potentially help identify possible dogs or cats in an area before volunteers begin searching on foot.
+- We could document our learnings and help improve further searches.
+*** Analysis & Research
+
+** How you can help?
+*** Donations
+- Support infrastructure, identification experiments, volunteer activities and fieldwork.
+*** Development
+- Help build tools for data collection, animal matching, mapping and search coordination.
+- Currently we have one developer looking into it. He'd love some friends and develop this in a more open source fashion.
+*** Volunteer
+- Survey your neighbourhood, photograph animals and contribute observations.
+- Spread the word.
+** FAQ
+*** What about animal privacy?
+Firstly, this has to be adjusted as we see usage and figure what works. But we'd want to keep the public somewhat fuzzy.
+
+Precise location and movement data may be useful for research and identification, but could otherwise become useful to dog thieves, smugglers or people attempting to harm or illegally relocate animals.
+** References
+- Demographics of free-roacmin by Laura Cunga Silva
+- Just be friendly (JBF datasets), could not access the data
+- District-wise Stray Dog and Stray Cattle based on 20th LC (Last updated 2023, not granular)
+
+** Other ideas
+*** Identification collar for dogs
+- Color coding and numbering (ref. Diksha Brahma)
+- Color can be made from waste materials (juhu beach studio)
+- NFC tags/QR for more accurate attributiom  (ref. Hrishikesh), but this has TOO MANY failuremodes!
+*** Animal trails
+- We can attach GPS to certain interesting cats and dogs to see their regular trails
