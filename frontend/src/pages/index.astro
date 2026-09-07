@@ -1,17 +1,705 @@
 ---
-
+const researchTopics = [
+	'population',
+	'movement',
+	'health',
+	'traffic',
+	'waste',
+	'vaccination',
+	'identification',
+	'planning',
+];
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="WATFA is a community-sourced open dataset of street dogs and cats in Guwahati."
+		/>
+		<meta name="theme-color" content="#f3efe5" />
+		<meta property="og:title" content="WATFA — Where are the free agents?" />
+		<meta property="og:description" content="A public record of Guwahati's street dogs and cats." />
+		<meta property="og:type" content="website" />
+		<title>WATFA — Where are the free agents?</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<a class="skip-link" href="#overview">Skip to overview</a>
+
+		<div class="site">
+			<header>
+				<a class="brand" href="#top" aria-label="WATFA, back to top">
+					<svg viewBox="0 0 42 42" aria-hidden="true">
+						<circle cx="12" cy="11" r="4"></circle>
+						<circle cx="21" cy="7" r="4"></circle>
+						<circle cx="30" cy="11" r="4"></circle>
+						<path d="M11 27c0-7 4-12 10-12s10 5 10 12c0 5-4 8-10 8s-10-3-10-8Z"></path>
+					</svg>
+					<strong>WATFA</strong>
+				</a>
+				<p>Where are the free agents?</p>
+				<nav aria-label="Main navigation">
+					<a href="#overview">The idea</a>
+					<a href="#help">Help</a>
+				</nav>
+			</header>
+
+			<main id="top">
+				<section class="hero" aria-labelledby="hero-title">
+					<div class="hero-copy">
+						<p class="kicker">Where are the free agents? · Guwahati</p>
+						<h1 id="hero-title">
+							<strong>WATFA</strong> is a community-sourced public dataset of street dogs and cats. It
+							creates a shared, ongoing record of the free agents who live across our neighbourhoods,
+							beginning in Guwahati.
+						</h1>
+						<div class="hero-bottom">
+							<p>
+								Collection can happen through forms, bots, a website or an app. What matters is the
+								shared dataset and the process for continuously maintaining it.
+							</p>
+						</div>
+					</div>
+
+					<aside class="hero-how" aria-labelledby="how-title">
+						<div class="card-head"><span>01 / Process</span><i>↘</i></div>
+						<h2 id="how-title">How it works</h2>
+						<ol>
+							<li><span>01</span><strong>Survey</strong><small>Volunteers regularly cover their neighbourhoods; anyone can add an ad-hoc sighting.</small></li>
+							<li><span>02</span><strong>Record</strong><small>Add a photo, time, approximate location and useful health or vaccination notes.</small></li>
+							<li><span>03</span><strong>Match</strong><small>Connect likely repeated sightings to an individual animal profile where possible.</small></li>
+							<li><span>04</span><strong>Follow</strong><small>See where and when an animal appears, and how they change over weeks, months and years.</small></li>
+						</ol>
+						<p class="how-note">Matches can stay fuzzy, using shape, features, markings and other visual or non-visual attributes.</p>
+					</aside>
+				</section>
+
+				<section class="lost-section" id="overview" aria-labelledby="lost-title">
+					<div class="lost-copy">
+						<div class="card-head"><span>02 / Lost · Found · Relocated</span><i>•••</i></div>
+						<h2 id="lost-title">Turn a chance sighting into a possible match.</h2>
+						<p>
+							A missing report in Chandmari and a casual sighting on Zoo Road may be the same animal.
+							WATFA can flag the possible match and preserve a timeline beyond one poster or post.
+						</p>
+					</div>
+					<div class="lost-match" aria-hidden="true">
+						<div><small>Missing</small><strong>Chandmari</strong></div>
+						<span><i></i><i></i><i></i></span>
+						<div><small>Sighting</small><strong>Zoo Road</strong></div>
+					</div>
+				</section>
+
+				<section class="poster-grid" aria-label="More ways WATFA can help">
+					<article class="card card-search">
+						<div class="card-head"><span>03</span><i>▦</i></div>
+						<h2>Search together</h2>
+						<p>
+							A local team can spread the word during the crucial first week, put up weather-resistant
+							posters, coordinate streets and watch for several missing animals at once.
+						</p>
+						<ul class="tags">
+							<li>Local know-how</li><li>Shared notes</li><li>Drone imagery</li><li>Better next time</li>
+						</ul>
+					</article>
+
+					<article class="card card-research">
+						<div class="card-head"><span>04</span><i>◎</i></div>
+						<h2>Research</h2>
+						<p>
+							Long-running observations can help communities, researchers, civic bodies and welfare
+							groups understand:
+						</p>
+						<ul class="topic-list">
+							{researchTopics.map((topic) => <li>{topic}</li>)}
+						</ul>
+						<div class="research-caution">
+							<strong>Read with care.</strong>
+							<span>Community observations have sampling bias. Record survey effort, missing data and confidence levels. Obscure sensitive locations. This is useful evidence, not an official count.</span>
+						</div>
+						<div class="ring" aria-hidden="true"></div>
+					</article>
+
+					<article class="card card-help" id="help">
+						<div class="card-head"><span>05</span><i>☰</i></div>
+						<h2>How to help</h2>
+						<dl>
+							<div><dt>Donate</dt><dd>Infrastructure, experiments and fieldwork.</dd></div>
+							<div><dt>Develop</dt><dd>Collection, matching, mapping and search tools. Our one developer wants friends.</dd></div>
+							<div><dt>Volunteer</dt><dd>Survey, photograph, contribute and spread the word.</dd></div>
+						</dl>
+					</article>
+
+					<article class="card card-privacy">
+						<div class="card-head"><span>06</span><i>⌗</i></div>
+						<h2>Animal privacy</h2>
+						<p>
+							Precise locations help research and identification, but can also help thieves, smugglers
+							or people trying to harm or illegally relocate animals. Public locations should stay
+							<strong>deliberately fuzzy</strong> and evolve as we learn.
+						</p>
+						<div class="privacy-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+					</article>
+				</section>
+			</main>
+
+			<footer>
+				<strong>WATFA</strong>
+				<p>Community-sourced · Open public dataset · Guwahati</p>
+				<a href="#top">Back to top ↑</a>
+			</footer>
+		</div>
 	</body>
 </html>
+
+<style>
+	:root {
+		--ink: #101010;
+		--paper: #f3efe5;
+		--blue: #174fe9;
+		--orange: #ff3d18;
+		--lime: #b7ef00;
+		--pink: #ed4aa8;
+		--yellow: #ffbd16;
+		--purple: #291257;
+		--line: 1px solid var(--ink);
+		--sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--mono: "SFMono-Regular", Consolas, monospace;
+	}
+
+	* { box-sizing: border-box; }
+
+	html {
+		scroll-behavior: smooth;
+		background: var(--ink);
+	}
+
+	body {
+		margin: 0;
+		background: var(--ink);
+		color: var(--ink);
+		font-family: var(--sans);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	a { color: inherit; }
+	p, h1, h2, ol, ul, dl, dd { margin-top: 0; }
+	::selection { background: var(--pink); }
+
+	.skip-link {
+		position: fixed;
+		top: 8px;
+		left: 8px;
+		z-index: 100;
+		padding: 8px 12px;
+		background: white;
+		font: 700 0.7rem var(--mono);
+		transform: translateY(-150%);
+	}
+
+	.skip-link:focus { transform: translateY(0); }
+
+	.site {
+		width: min(100% - 32px, 1440px);
+		margin: 16px auto;
+		background: var(--paper);
+		border: var(--line);
+	}
+
+	header {
+		display: grid;
+		height: 62px;
+		grid-template-columns: 1fr 1fr 1fr;
+		align-items: center;
+		border-bottom: var(--line);
+	}
+
+	header > * {
+		height: 100%;
+		margin: 0;
+		padding: 0 18px;
+		border-right: var(--line);
+	}
+
+	header > *:last-child { border-right: 0; }
+
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 1.25rem;
+		letter-spacing: -0.05em;
+		text-decoration: none;
+	}
+
+	.brand svg {
+		width: 34px;
+		height: 34px;
+		padding: 6px;
+		background: var(--orange);
+		border-radius: 50%;
+		fill: var(--ink);
+	}
+
+	header > p {
+		display: flex;
+		align-items: center;
+		font: 700 0.63rem var(--mono);
+		text-transform: uppercase;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 24px;
+	}
+
+	nav a,
+	footer a {
+		font: 700 0.62rem var(--mono);
+		text-transform: uppercase;
+		text-underline-offset: 4px;
+	}
+
+	.hero {
+		display: grid;
+		height: calc(65svh - 80px);
+		min-height: 440px;
+		grid-template-columns: 1.22fr 0.78fr;
+		border-bottom: var(--line);
+	}
+
+	.hero-copy {
+		display: flex;
+		min-width: 0;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: clamp(24px, 3.5vw, 52px);
+		border-right: var(--line);
+	}
+
+	.kicker,
+	.card-head {
+		font: 700 0.62rem/1.35 var(--mono);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.hero h1 {
+		margin: auto 0;
+		max-width: 760px;
+		font-size: clamp(1.8rem, 3vw, 3.1rem);
+		font-weight: 500;
+		letter-spacing: -0.045em;
+		line-height: 1.02;
+	}
+
+	.hero h1 strong {
+		color: var(--blue);
+		font-weight: 900;
+	}
+
+	.hero-bottom {
+		padding-top: 18px;
+		border-top: var(--line);
+	}
+
+	.hero-bottom p {
+		max-width: 600px;
+		margin: 0;
+		font-size: clamp(0.76rem, 1vw, 0.9rem);
+		line-height: 1.45;
+	}
+
+	.hero-how {
+		display: flex;
+		min-width: 0;
+		flex-direction: column;
+		padding: clamp(20px, 2.4vw, 34px);
+		background: var(--blue);
+		color: white;
+	}
+
+	.hero-how h2,
+	.lost-section h2 {
+		margin-bottom: 18px;
+		font-size: clamp(2rem, 3.5vw, 3.8rem);
+		font-weight: 900;
+		letter-spacing: -0.065em;
+		line-height: 0.92;
+		text-transform: uppercase;
+	}
+
+	.hero-how ol {
+		display: grid;
+		grid-template-columns: 1fr;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid white;
+		border-left: 1px solid white;
+		list-style: none;
+	}
+
+	.hero-how li {
+		display: grid;
+		grid-template-columns: 26px 70px 1fr;
+		gap: 10px;
+		align-items: start;
+		padding: clamp(9px, 1.3vw, 15px);
+		border-right: 1px solid white;
+		border-bottom: 1px solid white;
+	}
+
+	.hero-how li span {
+		font: 700 0.55rem var(--mono);
+		color: var(--lime);
+	}
+
+	.hero-how li strong {
+		font-size: 0.82rem;
+		text-transform: uppercase;
+	}
+
+	.hero-how li small {
+		font-size: 0.66rem;
+		line-height: 1.3;
+	}
+
+	.how-note {
+		margin: auto 0 0;
+		padding: 10px 12px;
+		background: var(--lime);
+		border: var(--line);
+		color: var(--ink);
+		font: 700 0.58rem/1.35 var(--mono);
+		text-transform: uppercase;
+	}
+
+	.lost-section {
+		display: grid;
+		height: 32svh;
+		min-height: 270px;
+		grid-template-columns: 1.15fr 0.85fr;
+		background: var(--orange);
+		border-bottom: var(--line);
+		scroll-margin-top: 10px;
+	}
+
+	.lost-copy {
+		padding: clamp(20px, 2.5vw, 36px);
+		border-right: var(--line);
+	}
+
+	.lost-section h2 {
+		max-width: 760px;
+		margin-bottom: 14px;
+	}
+
+	.lost-copy > p {
+		max-width: 710px;
+		margin: 0;
+		font-size: clamp(0.78rem, 1vw, 0.92rem);
+		line-height: 1.45;
+	}
+
+	.lost-match {
+		display: flex;
+		align-items: center;
+		padding: clamp(20px, 2.5vw, 36px);
+		background: var(--paper);
+	}
+
+	.lost-match > div {
+		display: flex;
+		width: clamp(90px, 11vw, 140px);
+		aspect-ratio: 1;
+		flex: 0 0 auto;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: var(--orange);
+		border: var(--line);
+		border-radius: 50%;
+		text-align: center;
+	}
+
+	.lost-match > div:last-child { background: var(--blue); color: white; }
+	.lost-match small { font: 700 0.52rem var(--mono); text-transform: uppercase; }
+	.lost-match strong { font-size: clamp(0.7rem, 1vw, 0.9rem); }
+
+	.lost-match > span {
+		display: flex;
+		min-width: 45px;
+		flex: 1;
+		align-items: center;
+		justify-content: space-around;
+		border-top: var(--line);
+	}
+
+	.lost-match > span i {
+		width: 7px;
+		height: 7px;
+		background: var(--paper);
+		border: var(--line);
+		border-radius: 50%;
+		transform: translateY(-50%);
+	}
+
+	.poster-grid {
+		display: grid;
+		height: 58svh;
+		min-height: 480px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, 1fr));
+		scroll-margin-top: 10px;
+	}
+
+	.card {
+		position: relative;
+		min-width: 0;
+		padding: clamp(13px, 1.35vw, 20px);
+		border-right: var(--line);
+		border-bottom: var(--line);
+		overflow: hidden;
+	}
+
+	.card:nth-child(2n) { border-right: 0; }
+	.card:nth-child(n + 3) { border-bottom: 0; }
+
+	.card-head {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: clamp(8px, 1.2vh, 14px);
+	}
+
+	.card-head i {
+		font-family: var(--sans);
+		font-size: 0.85rem;
+		font-style: normal;
+	}
+
+	.card h2 {
+		position: relative;
+		z-index: 2;
+		margin-bottom: clamp(7px, 1vh, 12px);
+		font-size: clamp(1.45rem, 2.25vw, 2.4rem);
+		font-weight: 900;
+		letter-spacing: -0.06em;
+		line-height: 0.95;
+		text-transform: uppercase;
+	}
+
+	.card p,
+	.card li,
+	.card dd {
+		position: relative;
+		z-index: 2;
+		font-size: clamp(0.67rem, 0.8vw, 0.78rem);
+		line-height: 1.38;
+	}
+
+	.card p { margin-bottom: 8px; }
+	.card strong { font-weight: 800; }
+
+	.card-search { background: var(--paper); }
+
+	.tags,
+	.topic-list {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5px;
+		margin: 10px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.tags li,
+	.topic-list li {
+		padding: 3px 6px;
+		border: var(--line);
+		font: 700 0.5rem var(--mono);
+		text-transform: uppercase;
+	}
+
+	.card-research {
+		background: var(--blue);
+		color: white;
+	}
+
+	.topic-list { max-width: 68%; }
+	.topic-list li { border-color: white; }
+
+	.research-caution {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 12px;
+		align-items: start;
+		padding: 10px clamp(13px, 1.35vw, 20px);
+		background: var(--lime);
+		border-top: 1px solid white;
+		color: var(--ink);
+	}
+
+	.research-caution strong {
+		font-size: 0.74rem;
+		text-transform: uppercase;
+	}
+
+	.research-caution span {
+		font-size: clamp(0.58rem, 0.7vw, 0.68rem);
+		line-height: 1.3;
+	}
+
+	.ring {
+		position: absolute;
+		right: -8%;
+		bottom: -18%;
+		width: 44%;
+		aspect-ratio: 1;
+		border: 17px solid var(--lime);
+		border-radius: 50%;
+	}
+
+	.card-help { scroll-margin-top: 10px; }
+
+	.card-help dl { margin-bottom: 0; }
+
+	.card-help dl > div {
+		display: grid;
+		grid-template-columns: 64px 1fr;
+		gap: 8px;
+		padding: 5px 0;
+		border-top: var(--line);
+	}
+
+	.card-help dt {
+		font-size: clamp(0.68rem, 0.8vw, 0.8rem);
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	.card-help dd { margin: 0; }
+
+	.card-privacy { background: var(--yellow); }
+
+	.privacy-mark {
+		position: absolute;
+		right: 7%;
+		bottom: 8%;
+		display: grid;
+		width: 94px;
+		aspect-ratio: 1;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+	}
+
+	.privacy-mark i { background: var(--blue); }
+	.privacy-mark b {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 32px;
+		aspect-ratio: 1;
+		background: var(--orange);
+		border: var(--line);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	footer {
+		display: grid;
+		height: 62px;
+		grid-template-columns: auto 1fr auto;
+		gap: 20px;
+		align-items: center;
+		padding: 0 18px;
+		background: var(--ink);
+		color: white;
+	}
+
+	footer strong { color: var(--orange); }
+	footer p { margin: 0; font: 600 0.56rem var(--mono); text-transform: uppercase; }
+
+	@media (max-width: 900px) {
+		.site { width: calc(100% - 20px); margin: 10px; }
+		header { grid-template-columns: 1fr 1fr; }
+		header > p { display: none; }
+		header .brand { border-right: var(--line); }
+
+		.hero {
+			height: auto;
+			min-height: 0;
+			grid-template-columns: 1fr;
+		}
+
+		.hero-copy { min-height: 500px; border-right: 0; border-bottom: var(--line); }
+		.hero-how { min-height: 410px; }
+		.lost-section { height: auto; min-height: 290px; }
+		.poster-grid {
+			height: auto;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-rows: none;
+		}
+
+		.card { min-height: 260px; border-right: var(--line); border-bottom: var(--line); }
+		.card:nth-child(2n) { border-right: 0; }
+		.card:nth-child(n + 3) { border-bottom: 0; }
+		.card:last-child { grid-column: auto; border-right: 0; }
+		.card p, .card li, .card dd { font-size: 0.75rem; }
+		.topic-list { max-width: 78%; }
+	}
+
+	@media (max-width: 560px) {
+		.site { width: 100%; margin: 0; border: 0; }
+		header { height: 58px; }
+		header > * { padding: 0 12px; }
+		nav { gap: 13px; }
+
+		.hero-copy { min-height: 480px; padding: 24px 16px; }
+		.hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+		.hero-bottom { grid-template-columns: 1fr; gap: 10px; }
+		.hero-how { min-height: 390px; padding: 20px 16px; }
+		.hero-how h2 { font-size: 2.5rem; }
+
+		.lost-section { grid-template-columns: 1fr; }
+		.lost-copy { padding: 22px 17px; border-right: 0; border-bottom: var(--line); }
+		.lost-section h2 { font-size: 2.5rem; }
+		.lost-match { min-height: 230px; padding: 24px 17px; }
+
+		.poster-grid { grid-template-columns: 1fr; }
+		.card,
+		.card:nth-child(2n),
+		.card:nth-child(3n),
+		.card:last-child {
+			grid-column: auto;
+			min-height: 235px;
+			padding: 17px;
+			border-right: 0;
+			border-bottom: var(--line);
+		}
+
+		.card h2 { font-size: 2rem; }
+		.card p, .card li, .card dd { font-size: 0.76rem; }
+		.card-research { min-height: 320px; }
+		.card-help dl > div { grid-template-columns: 70px 1fr; }
+
+		footer { height: auto; min-height: 86px; grid-template-columns: auto 1fr; }
+		footer a { grid-column: 1 / -1; padding: 10px 0; border-top: 1px solid #555; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html { scroll-behavior: auto; }
+	}
+</style>

@@ -62,15 +62,16 @@ Because community-contributed observations will contain sampling biases, this sh
 Firstly, this has to be adjusted as we see usage and figure what works. But we'd want to keep the public somewhat fuzzy.
 
 Precise location and movement data may be useful for research and identification, but could otherwise become useful to dog thieves, smugglers or people attempting to harm or illegally relocate animals.
-** References
+** Others
+*** References
 - Demographics of free-roacmin by Laura Cunga Silva
 - Just be friendly (JBF datasets), could not access the data
 - District-wise Stray Dog and Stray Cattle based on 20th LC (Last updated 2023, not granular)
 
-** Other ideas
-*** Identification collar for dogs
+*** Future ideas
+**** Identification collar for dogs
 - Color coding and numbering (ref. Diksha Brahma)
 - Color can be made from waste materials (juhu beach studio)
 - NFC tags/QR for more accurate attributiom  (ref. Hrishikesh), but this has TOO MANY failuremodes!
-*** Animal trails
+**** Animal trails
 - We can attach GPS to certain interesting cats and dogs to see their regular trails
