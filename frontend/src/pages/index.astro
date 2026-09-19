@@ -41,21 +41,19 @@ const researchTopics = [
 					</svg>
 					<strong>WATFA</strong>
 				</a>
-				<p>Where are the free agents?</p>
-				<nav aria-label="Main navigation">
-					<a href="#overview">The idea</a>
-					<a href="#help">Help</a>
-				</nav>
 			</header>
 
 			<main id="top">
 				<section class="hero" aria-labelledby="hero-title">
 					<div class="hero-copy">
-						<p class="kicker">Where are the free agents? · Guwahati</p>
+						<div class="hero-wordmark">
+							<strong>WATFA</strong>
+							<span aria-hidden="true">/</span>
+							<p>Where are the<br />free agents?</p>
+						</div>
 						<h1 id="hero-title">
-							<strong>WATFA</strong> is a community-sourced public dataset of street dogs and cats. It
-							creates a shared, ongoing record of the free agents who live across our neighbourhoods,
-							beginning in Guwahati.
+							A community-sourced public dataset of street dogs and cats, creating a shared, ongoing
+							record of the free agents who live across our neighbourhoods.
 						</h1>
 						<div class="hero-bottom">
 							<p>
@@ -68,13 +66,28 @@ const researchTopics = [
 					<aside class="hero-how" aria-labelledby="how-title">
 						<div class="card-head"><span>01 / Process</span><i>↘</i></div>
 						<h2 id="how-title">How it works</h2>
-						<ol>
-							<li><span>01</span><strong>Survey</strong><small>Volunteers regularly cover their neighbourhoods; anyone can add an ad-hoc sighting.</small></li>
-							<li><span>02</span><strong>Record</strong><small>Add a photo, time, approximate location and useful health or vaccination notes.</small></li>
-							<li><span>03</span><strong>Match</strong><small>Connect likely repeated sightings to an individual animal profile where possible.</small></li>
-							<li><span>04</span><strong>Follow</strong><small>See where and when an animal appears, and how they change over weeks, months and years.</small></li>
-						</ol>
-						<p class="how-note">Matches can stay fuzzy, using shape, features, markings and other visual or non-visual attributes.</p>
+						<div class="process-loop">
+							<ol>
+								<li>
+									<div class="process-step-head"><span>01</span><strong>Record</strong></div>
+									<p class="process-summary">Anyone can add an ad-hoc sighting with a photo, time, approximate location and useful notes about health, behaviour or vaccination status.</p>
+									<div class="process-detail">
+										<h3>Recurring citywide coverage</h3>
+										<p>Coordinate regular neighbourhood surveys and spotting sessions across the city to build consistent coverage and follow change over time.</p>
+									</div>
+								</li>
+								<li>
+									<div class="process-step-head"><span>02</span><strong>Match</strong></div>
+									<p class="process-summary">Connect likely repeated sightings to an individual animal profile when the available evidence makes a useful match possible.</p>
+									<div class="process-detail">
+										<h3>Flexible matching</h3>
+										<p>Matches can stay fuzzy, combining shape, features, markings, behaviour and other visual or non-visual clues.</p>
+									</div>
+								</li>
+							</ol>
+							<div class="loop-return" aria-hidden="true"></div>
+							<div class="loop-forward" aria-hidden="true"></div>
+						</div>
 					</aside>
 				</section>
 
@@ -117,9 +130,15 @@ const researchTopics = [
 						<ul class="topic-list">
 							{researchTopics.map((topic) => <li>{topic}</li>)}
 						</ul>
-						<div class="research-caution">
-							<strong>Read with care.</strong>
-							<span>Community observations have sampling bias. Record survey effort, missing data and confidence levels. Obscure sensitive locations. This is useful evidence, not an official count.</span>
+						<div class="research-notes">
+							<div class="research-note research-caution">
+								<strong>Read with care.</strong>
+								<span>Community observations have sampling bias. Record survey effort, missing data and confidence levels. Obscure sensitive locations. This is useful evidence, not an official count.</span>
+							</div>
+							<div class="research-note animal-privacy">
+								<strong>Animal privacy.</strong>
+								<span>Precise locations help research and identification, but can also help thieves, smugglers or people trying to harm or illegally relocate animals. Public locations should stay <b>deliberately fuzzy</b> and evolve as we learn.</span>
+							</div>
 						</div>
 						<div class="ring" aria-hidden="true"></div>
 					</article>
@@ -132,17 +151,6 @@ const researchTopics = [
 							<div><dt>Develop</dt><dd>Collection, matching, mapping and search tools. Our one developer wants friends.</dd></div>
 							<div><dt>Volunteer</dt><dd>Survey, photograph, contribute and spread the word.</dd></div>
 						</dl>
-					</article>
-
-					<article class="card card-privacy">
-						<div class="card-head"><span>06</span><i>⌗</i></div>
-						<h2>Animal privacy</h2>
-						<p>
-							Precise locations help research and identification, but can also help thieves, smugglers
-							or people trying to harm or illegally relocate animals. Public locations should stay
-							<strong>deliberately fuzzy</strong> and evolve as we learn.
-						</p>
-						<div class="privacy-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
 					</article>
 				</section>
 			</main>
@@ -211,23 +219,17 @@ const researchTopics = [
 	}
 
 	header {
-		display: grid;
+		display: flex;
 		height: 62px;
-		grid-template-columns: 1fr 1fr 1fr;
 		align-items: center;
+		justify-content: flex-start;
 		border-bottom: var(--line);
 	}
 
-	header > * {
+	header .brand {
 		height: 100%;
 		margin: 0;
 		padding: 0 18px;
-		border-right: var(--line);
-	}
-
-	header > *:last-child { border-right: 0; }
-
-	.brand {
 		display: flex;
 		align-items: center;
 		gap: 10px;
@@ -245,21 +247,6 @@ const researchTopics = [
 		fill: var(--ink);
 	}
 
-	header > p {
-		display: flex;
-		align-items: center;
-		font: 700 0.63rem var(--mono);
-		text-transform: uppercase;
-	}
-
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-		gap: 24px;
-	}
-
-	nav a,
 	footer a {
 		font: 700 0.62rem var(--mono);
 		text-transform: uppercase;
@@ -268,8 +255,8 @@ const researchTopics = [
 
 	.hero {
 		display: grid;
-		height: calc(65svh - 80px);
-		min-height: 440px;
+		height: auto;
+		min-height: max(560px, calc(65svh - 80px));
 		grid-template-columns: 1.22fr 0.78fr;
 		border-bottom: var(--line);
 	}
@@ -283,11 +270,37 @@ const researchTopics = [
 		border-right: var(--line);
 	}
 
-	.kicker,
 	.card-head {
 		font: 700 0.62rem/1.35 var(--mono);
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
+	}
+
+	.hero-wordmark {
+		display: flex;
+		align-items: center;
+		gap: clamp(10px, 1.4vw, 20px);
+		text-transform: uppercase;
+	}
+
+	.hero-wordmark strong {
+		font-size: clamp(2.8rem, 5.8vw, 5rem);
+		font-weight: 900;
+		letter-spacing: -0.09em;
+		line-height: 0.8;
+	}
+
+	.hero-wordmark > span {
+		color: var(--orange);
+		font-size: clamp(2rem, 3.5vw, 3.5rem);
+		font-weight: 300;
+		line-height: 1;
+	}
+
+	.hero-wordmark p {
+		margin: 0;
+		font: 800 clamp(0.62rem, 0.9vw, 0.82rem)/1.08 var(--mono);
+		letter-spacing: -0.04em;
 	}
 
 	.hero h1 {
@@ -297,11 +310,6 @@ const researchTopics = [
 		font-weight: 500;
 		letter-spacing: -0.045em;
 		line-height: 1.02;
-	}
-
-	.hero h1 strong {
-		color: var(--blue);
-		font-weight: 900;
 	}
 
 	.hero-bottom {
@@ -335,49 +343,114 @@ const researchTopics = [
 		text-transform: uppercase;
 	}
 
+	.process-loop {
+		position: relative;
+	}
+
 	.hero-how ol {
 		display: grid;
-		grid-template-columns: 1fr;
-		margin: 0;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 8px;
+		margin: 0 25px;
 		padding: 0;
-		border-top: 1px solid white;
-		border-left: 1px solid white;
 		list-style: none;
 	}
 
 	.hero-how li {
-		display: grid;
-		grid-template-columns: 26px 70px 1fr;
-		gap: 10px;
-		align-items: start;
+		display: flex;
+		min-height: 0;
+		flex-direction: column;
 		padding: clamp(9px, 1.3vw, 15px);
-		border-right: 1px solid white;
-		border-bottom: 1px solid white;
+		border: 1px solid white;
 	}
 
-	.hero-how li span {
-		font: 700 0.55rem var(--mono);
+	.process-step-head {
+		display: grid;
+		grid-template-columns: 30px 1fr;
+		gap: 10px;
+		align-items: baseline;
+	}
+
+	.process-step-head span {
+		font: 700 0.68rem var(--mono);
 		color: var(--lime);
 	}
 
-	.hero-how li strong {
-		font-size: 0.82rem;
+	.process-step-head strong {
+		font-size: clamp(1rem, 1.2vw, 1.15rem);
 		text-transform: uppercase;
 	}
 
-	.hero-how li small {
-		font-size: 0.66rem;
-		line-height: 1.3;
+	.process-summary {
+		max-width: 66ch;
+		margin: 8px 0 13px 40px;
+		font-size: clamp(0.78rem, 0.92vw, 0.88rem);
+		line-height: 1.38;
 	}
 
-	.how-note {
-		margin: auto 0 0;
-		padding: 10px 12px;
-		background: var(--lime);
-		border: var(--line);
-		color: var(--ink);
-		font: 700 0.58rem/1.35 var(--mono);
+	.process-detail {
+		margin-top: auto;
+		padding: 11px 0 0 40px;
+		border-top: 1px solid rgb(255 255 255 / 55%);
+	}
+
+	.process-detail h3 {
+		margin: 0 0 5px;
+		color: var(--lime);
+		font: 800 clamp(0.7rem, 0.82vw, 0.78rem)/1.25 var(--mono);
 		text-transform: uppercase;
+	}
+
+	.process-detail p {
+		max-width: 68ch;
+		margin: 0;
+		font: 500 clamp(0.68rem, 0.78vw, 0.76rem)/1.42 var(--mono);
+	}
+
+	.loop-return,
+	.loop-forward {
+		position: absolute;
+		top: 25%;
+		bottom: 25%;
+		width: 26px;
+	}
+
+	.loop-return {
+		left: 0;
+		border-top: 2px solid var(--lime);
+		border-bottom: 2px solid var(--lime);
+		border-left: 2px solid var(--lime);
+	}
+
+	.loop-return::before {
+		position: absolute;
+		top: -5px;
+		right: -1px;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
+		border-left: 7px solid var(--lime);
+		content: "";
+	}
+
+	.loop-forward {
+		right: 0;
+		border-top: 2px solid var(--lime);
+		border-right: 2px solid var(--lime);
+		border-bottom: 2px solid var(--lime);
+	}
+
+	.loop-forward::after {
+		position: absolute;
+		bottom: -5px;
+		left: -1px;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-right: 7px solid var(--lime);
+		border-bottom: 4px solid transparent;
+		content: "";
 	}
 
 	.lost-section {
@@ -460,9 +533,10 @@ const researchTopics = [
 	}
 
 	.card {
+		--card-pad: clamp(13px, 1.35vw, 20px);
 		position: relative;
 		min-width: 0;
-		padding: clamp(13px, 1.35vw, 20px);
+		padding: var(--card-pad);
 		border-right: var(--line);
 		border-bottom: var(--line);
 		overflow: hidden;
@@ -529,6 +603,9 @@ const researchTopics = [
 	}
 
 	.card-research {
+		display: flex;
+		grid-row: span 2;
+		flex-direction: column;
 		background: var(--blue);
 		color: white;
 	}
@@ -536,31 +613,37 @@ const researchTopics = [
 	.topic-list { max-width: 68%; }
 	.topic-list li { border-color: white; }
 
-	.research-caution {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 0;
+	.research-notes {
+		position: relative;
 		z-index: 3;
+		margin: auto calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad));
+		padding-top: 20px;
+	}
+
+	.research-note {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: minmax(92px, auto) 1fr;
 		gap: 12px;
 		align-items: start;
-		padding: 10px clamp(13px, 1.35vw, 20px);
-		background: var(--lime);
+		padding: 11px var(--card-pad);
 		border-top: 1px solid white;
 		color: var(--ink);
 	}
 
-	.research-caution strong {
+	.research-caution { background: var(--lime); }
+	.animal-privacy { background: var(--yellow); }
+
+	.research-note strong {
 		font-size: 0.74rem;
 		text-transform: uppercase;
 	}
 
-	.research-caution span {
+	.research-note span {
 		font-size: clamp(0.58rem, 0.7vw, 0.68rem);
 		line-height: 1.3;
 	}
+
+	.research-note b { font-weight: 800; }
 
 	.ring {
 		position: absolute;
@@ -592,32 +675,6 @@ const researchTopics = [
 
 	.card-help dd { margin: 0; }
 
-	.card-privacy { background: var(--yellow); }
-
-	.privacy-mark {
-		position: absolute;
-		right: 7%;
-		bottom: 8%;
-		display: grid;
-		width: 94px;
-		aspect-ratio: 1;
-		grid-template-columns: 1fr 1fr;
-		gap: 32px;
-	}
-
-	.privacy-mark i { background: var(--blue); }
-	.privacy-mark b {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 32px;
-		aspect-ratio: 1;
-		background: var(--orange);
-		border: var(--line);
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-	}
-
 	footer {
 		display: grid;
 		height: 62px;
@@ -634,9 +691,6 @@ const researchTopics = [
 
 	@media (max-width: 900px) {
 		.site { width: calc(100% - 20px); margin: 10px; }
-		header { grid-template-columns: 1fr 1fr; }
-		header > p { display: none; }
-		header .brand { border-right: var(--line); }
 
 		.hero {
 			height: auto;
@@ -645,7 +699,7 @@ const researchTopics = [
 		}
 
 		.hero-copy { min-height: 500px; border-right: 0; border-bottom: var(--line); }
-		.hero-how { min-height: 410px; }
+		.hero-how { min-height: 0; }
 		.lost-section { height: auto; min-height: 290px; }
 		.poster-grid {
 			height: auto;
@@ -656,7 +710,6 @@ const researchTopics = [
 		.card { min-height: 260px; border-right: var(--line); border-bottom: var(--line); }
 		.card:nth-child(2n) { border-right: 0; }
 		.card:nth-child(n + 3) { border-bottom: 0; }
-		.card:last-child { grid-column: auto; border-right: 0; }
 		.card p, .card li, .card dd { font-size: 0.75rem; }
 		.topic-list { max-width: 78%; }
 	}
@@ -664,13 +717,16 @@ const researchTopics = [
 	@media (max-width: 560px) {
 		.site { width: 100%; margin: 0; border: 0; }
 		header { height: 58px; }
-		header > * { padding: 0 12px; }
-		nav { gap: 13px; }
+		header .brand { padding: 0 12px; }
 
 		.hero-copy { min-height: 480px; padding: 24px 16px; }
+		.hero-wordmark { gap: 8px; }
+		.hero-wordmark strong { font-size: clamp(2.5rem, 13vw, 4rem); }
+		.hero-wordmark > span { font-size: 1.8rem; }
+		.hero-wordmark p { font-size: clamp(0.55rem, 2.6vw, 0.7rem); }
 		.hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
 		.hero-bottom { grid-template-columns: 1fr; gap: 10px; }
-		.hero-how { min-height: 390px; padding: 20px 16px; }
+		.hero-how { min-height: 0; padding: 20px 16px; }
 		.hero-how h2 { font-size: 2.5rem; }
 
 		.lost-section { grid-template-columns: 1fr; }
@@ -683,16 +739,18 @@ const researchTopics = [
 		.card:nth-child(2n),
 		.card:nth-child(3n),
 		.card:last-child {
+			--card-pad: 17px;
 			grid-column: auto;
+			grid-row: auto;
 			min-height: 235px;
-			padding: 17px;
+			padding: var(--card-pad);
 			border-right: 0;
 			border-bottom: var(--line);
 		}
 
 		.card h2 { font-size: 2rem; }
 		.card p, .card li, .card dd { font-size: 0.76rem; }
-		.card-research { min-height: 320px; }
+		.card-research { min-height: 430px; }
 		.card-help dl > div { grid-template-columns: 70px 1fr; }
 
 		footer { height: auto; min-height: 86px; grid-template-columns: auto 1fr; }
