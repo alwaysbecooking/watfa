@@ -55,12 +55,6 @@ const researchTopics = [
 							A community-sourced public dataset of street dogs and cats, creating a shared, ongoing
 							record of the free agents who live across our neighbourhoods.
 						</h1>
-						<div class="hero-bottom">
-							<p>
-								Collection can happen through forms, bots, a website or an app. What matters is the
-								shared dataset and the process for continuously maintaining it.
-							</p>
-						</div>
 					</div>
 
 					<aside class="hero-how" aria-labelledby="how-title">
@@ -70,7 +64,9 @@ const researchTopics = [
 							<ol>
 								<li>
 									<div class="process-step-head"><span>01</span><strong>Record</strong></div>
-									<p class="process-summary">Anyone can add an ad-hoc sighting with a photo, time, approximate location and useful notes about health, behaviour or vaccination status.</p>
+									<p class="process-summary">
+Anyone can add an ad-hoc sighting with a photo, time, approximate location and useful notes about health, behaviour or vaccination status.
+</p>
 									<div class="process-detail">
 										<h3>Recurring citywide coverage</h3>
 										<p>Coordinate regular neighbourhood surveys and spotting sessions across the city to build consistent coverage and follow change over time.</p>
@@ -91,23 +87,21 @@ const researchTopics = [
 					</aside>
 				</section>
 
-				<section class="lost-section" id="overview" aria-labelledby="lost-title">
-					<div class="lost-copy">
+				<section class="poster-grid" id="overview" aria-label="More ways WATFA can help">
+					<article class="card card-lost" aria-labelledby="lost-title">
 						<div class="card-head"><span>02 / Lost · Found · Relocated</span><i>•••</i></div>
 						<h2 id="lost-title">Turn a chance sighting into a possible match.</h2>
 						<p>
 							A missing report in Chandmari and a casual sighting on Zoo Road may be the same animal.
 							WATFA can flag the possible match and preserve a timeline beyond one poster or post.
 						</p>
-					</div>
-					<div class="lost-match" aria-hidden="true">
-						<div><small>Missing</small><strong>Chandmari</strong></div>
-						<span><i></i><i></i><i></i></span>
-						<div><small>Sighting</small><strong>Zoo Road</strong></div>
-					</div>
-				</section>
+						<figure class="match-ascii">
+							<pre aria-hidden="true"><span>[ MISSING ]</span> o----o----o <span>[ SIGHTING ]</span>
+  CHANDMARI             ZOO ROAD</pre>
+							<figcaption>A missing report in Chandmari connected to a possible sighting on Zoo Road.</figcaption>
+						</figure>
+					</article>
 
-				<section class="poster-grid" aria-label="More ways WATFA can help">
 					<article class="card card-search">
 						<div class="card-head"><span>03</span><i>▦</i></div>
 						<h2>Search together</h2>
@@ -135,16 +129,44 @@ const researchTopics = [
 								<strong>Read with care.</strong>
 								<span>Community observations have sampling bias. Record survey effort, missing data and confidence levels. Obscure sensitive locations. This is useful evidence, not an official count.</span>
 							</div>
-							<div class="research-note animal-privacy">
-								<strong>Animal privacy.</strong>
-								<span>Precise locations help research and identification, but can also help thieves, smugglers or people trying to harm or illegally relocate animals. Public locations should stay <b>deliberately fuzzy</b> and evolve as we learn.</span>
-							</div>
 						</div>
 						<div class="ring" aria-hidden="true"></div>
 					</article>
 
+					<article class="card card-faq">
+						<div class="card-head"><span>05</span><i>?</i></div>
+						<h2>FAQ</h2>
+						<dl class="faq-list">
+							<div>
+								<dt>Is this an app?</dt>
+								<dd>
+									No. WATFA is a community-sourced open public dataset—not an app, platform, startup
+									or product. It may use forms, bots, a website or an app as its interface, but those
+									can change. What matters is the shared dataset and the process for maintaining it.
+								</dd>
+							</div>
+							<div>
+								<dt>What about animal privacy?</dt>
+								<dd>
+									Precise locations help research and identification, but can also help thieves,
+									smugglers or people trying to harm or illegally relocate animals. Public locations
+									should stay <strong>deliberately fuzzy</strong> and evolve as we learn what works.
+								</dd>
+							</div>
+							<div>
+								<dt>Can WATFA help with animal rescue?</dt>
+								<dd>
+									Rescue is not WATFA's primary focus. If an animal is injured or in distress, use a
+									dedicated service such as <a href="https://karunanidhan.app/">Karuna Nidhan</a>.
+									We would rather integrate with existing rescue networks than replace or interfere
+									with them.
+								</dd>
+							</div>
+						</dl>
+					</article>
+
 					<article class="card card-help" id="help">
-						<div class="card-head"><span>05</span><i>☰</i></div>
+						<div class="card-head"><span>06</span><i>☰</i></div>
 						<h2>How to help</h2>
 						<dl>
 							<div><dt>Donate</dt><dd>Infrastructure, experiments and fieldwork.</dd></div>
@@ -312,18 +334,6 @@ const researchTopics = [
 		line-height: 1.02;
 	}
 
-	.hero-bottom {
-		padding-top: 18px;
-		border-top: var(--line);
-	}
-
-	.hero-bottom p {
-		max-width: 600px;
-		margin: 0;
-		font-size: clamp(0.76rem, 1vw, 0.9rem);
-		line-height: 1.45;
-	}
-
 	.hero-how {
 		display: flex;
 		min-width: 0;
@@ -333,8 +343,7 @@ const researchTopics = [
 		color: white;
 	}
 
-	.hero-how h2,
-	.lost-section h2 {
+	.hero-how h2 {
 		margin-bottom: 18px;
 		font-size: clamp(2rem, 3.5vw, 3.8rem);
 		font-weight: 900;
@@ -453,89 +462,17 @@ const researchTopics = [
 		content: "";
 	}
 
-	.lost-section {
-		display: grid;
-		height: 32svh;
-		min-height: 270px;
-		grid-template-columns: 1.15fr 0.85fr;
-		background: var(--orange);
-		border-bottom: var(--line);
-		scroll-margin-top: 10px;
-	}
-
-	.lost-copy {
-		padding: clamp(20px, 2.5vw, 36px);
-		border-right: var(--line);
-	}
-
-	.lost-section h2 {
-		max-width: 760px;
-		margin-bottom: 14px;
-	}
-
-	.lost-copy > p {
-		max-width: 710px;
-		margin: 0;
-		font-size: clamp(0.78rem, 1vw, 0.92rem);
-		line-height: 1.45;
-	}
-
-	.lost-match {
-		display: flex;
-		align-items: center;
-		padding: clamp(20px, 2.5vw, 36px);
-		background: var(--paper);
-	}
-
-	.lost-match > div {
-		display: flex;
-		width: clamp(90px, 11vw, 140px);
-		aspect-ratio: 1;
-		flex: 0 0 auto;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		background: var(--orange);
-		border: var(--line);
-		border-radius: 50%;
-		text-align: center;
-	}
-
-	.lost-match > div:last-child { background: var(--blue); color: white; }
-	.lost-match small { font: 700 0.52rem var(--mono); text-transform: uppercase; }
-	.lost-match strong { font-size: clamp(0.7rem, 1vw, 0.9rem); }
-
-	.lost-match > span {
-		display: flex;
-		min-width: 45px;
-		flex: 1;
-		align-items: center;
-		justify-content: space-around;
-		border-top: var(--line);
-	}
-
-	.lost-match > span i {
-		width: 7px;
-		height: 7px;
-		background: var(--paper);
-		border: var(--line);
-		border-radius: 50%;
-		transform: translateY(-50%);
-	}
-
 	.poster-grid {
 		display: grid;
-		height: 58svh;
-		min-height: 480px;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		grid-template-rows: repeat(2, minmax(0, 1fr));
 		scroll-margin-top: 10px;
 	}
 
 	.card {
-		--card-pad: clamp(13px, 1.35vw, 20px);
+		--card-pad: clamp(20px, 2.5vw, 36px);
 		position: relative;
 		min-width: 0;
+		min-height: 320px;
 		padding: var(--card-pad);
 		border-right: var(--line);
 		border-bottom: var(--line);
@@ -543,7 +480,6 @@ const researchTopics = [
 	}
 
 	.card:nth-child(2n) { border-right: 0; }
-	.card:nth-child(n + 3) { border-bottom: 0; }
 
 	.card-head {
 		display: flex;
@@ -580,6 +516,55 @@ const researchTopics = [
 	.card p { margin-bottom: 8px; }
 	.card strong { font-weight: 800; }
 
+	.card-lost {
+		display: flex;
+		min-height: 390px;
+		flex-direction: column;
+		background: var(--orange);
+	}
+
+	.card-lost h2 {
+		max-width: 650px;
+		margin-bottom: 14px;
+		font-size: clamp(2rem, 3.5vw, 3.8rem);
+	}
+
+	.card-lost > p {
+		max-width: 64ch;
+		font-size: clamp(0.78rem, 1vw, 0.92rem);
+		line-height: 1.45;
+	}
+
+	.match-ascii {
+		margin: auto 0 0;
+		padding-top: clamp(24px, 4vw, 54px);
+		overflow: hidden;
+	}
+
+	.match-ascii pre {
+		margin: 0;
+		padding: clamp(13px, 1.5vw, 20px) 0;
+		border-top: var(--line);
+		border-bottom: var(--line);
+		font: 800 clamp(0.55rem, 0.85vw, 0.76rem)/1.9 var(--mono);
+		letter-spacing: -0.055em;
+		white-space: pre;
+	}
+
+	.match-ascii pre span:last-child { color: var(--blue); }
+
+	.match-ascii figcaption {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.card-search { background: var(--paper); }
 
 	.tags,
@@ -604,7 +589,7 @@ const researchTopics = [
 
 	.card-research {
 		display: flex;
-		grid-row: span 2;
+		min-height: 370px;
 		flex-direction: column;
 		background: var(--blue);
 		color: white;
@@ -631,7 +616,6 @@ const researchTopics = [
 	}
 
 	.research-caution { background: var(--lime); }
-	.animal-privacy { background: var(--yellow); }
 
 	.research-note strong {
 		font-size: 0.74rem;
@@ -655,17 +639,65 @@ const researchTopics = [
 		border-radius: 50%;
 	}
 
-	.card-help { scroll-margin-top: 10px; }
+	.card-faq {
+		display: flex;
+		min-height: 370px;
+		flex-direction: column;
+		background: var(--yellow);
+	}
 
-	.card-help dl { margin-bottom: 0; }
+	.faq-list {
+		position: relative;
+		z-index: 2;
+		margin: auto 0 0;
+	}
+
+	.faq-list > div {
+		padding-top: clamp(14px, 2vw, 24px);
+		border-top: var(--line);
+	}
+
+	.faq-list dt {
+		max-width: 18ch;
+		margin-bottom: 12px;
+		font-size: clamp(1.2rem, 2vw, 1.9rem);
+		font-weight: 800;
+		letter-spacing: -0.04em;
+		line-height: 1;
+	}
+
+	.faq-list dd {
+		max-width: 62ch;
+		margin: 0;
+	}
+
+	.card-help {
+		display: flex;
+		min-height: 230px;
+		grid-column: 1 / -1;
+		flex-direction: column;
+		border-right: 0;
+		border-bottom: 0;
+		scroll-margin-top: 10px;
+	}
+
+	.card-help dl {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		margin: auto 0 0;
+	}
 
 	.card-help dl > div {
 		display: grid;
-		grid-template-columns: 64px 1fr;
-		gap: 8px;
-		padding: 5px 0;
+		grid-template-columns: 74px 1fr;
+		gap: 10px;
+		padding: 12px clamp(12px, 1.5vw, 22px);
 		border-top: var(--line);
+		border-right: var(--line);
 	}
+
+	.card-help dl > div:first-child { padding-left: 0; }
+	.card-help dl > div:last-child { padding-right: 0; border-right: 0; }
 
 	.card-help dt {
 		font-size: clamp(0.68rem, 0.8vw, 0.8rem);
@@ -700,18 +732,16 @@ const researchTopics = [
 
 		.hero-copy { min-height: 500px; border-right: 0; border-bottom: var(--line); }
 		.hero-how { min-height: 0; }
-		.lost-section { height: auto; min-height: 290px; }
 		.poster-grid {
-			height: auto;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			grid-template-rows: none;
 		}
 
 		.card { min-height: 260px; border-right: var(--line); border-bottom: var(--line); }
 		.card:nth-child(2n) { border-right: 0; }
-		.card:nth-child(n + 3) { border-bottom: 0; }
 		.card p, .card li, .card dd { font-size: 0.75rem; }
 		.topic-list { max-width: 78%; }
+		.card-help { min-height: 220px; border-right: 0; border-bottom: 0; }
+		.card-help dl > div { grid-template-columns: 1fr; }
 	}
 
 	@media (max-width: 560px) {
@@ -725,20 +755,13 @@ const researchTopics = [
 		.hero-wordmark > span { font-size: 1.8rem; }
 		.hero-wordmark p { font-size: clamp(0.55rem, 2.6vw, 0.7rem); }
 		.hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
-		.hero-bottom { grid-template-columns: 1fr; gap: 10px; }
 		.hero-how { min-height: 0; padding: 20px 16px; }
 		.hero-how h2 { font-size: 2.5rem; }
-
-		.lost-section { grid-template-columns: 1fr; }
-		.lost-copy { padding: 22px 17px; border-right: 0; border-bottom: var(--line); }
-		.lost-section h2 { font-size: 2.5rem; }
-		.lost-match { min-height: 230px; padding: 24px 17px; }
 
 		.poster-grid { grid-template-columns: 1fr; }
 		.card,
 		.card:nth-child(2n),
-		.card:nth-child(3n),
-		.card:last-child {
+		.card-help {
 			--card-pad: 17px;
 			grid-column: auto;
 			grid-row: auto;
@@ -748,10 +771,20 @@ const researchTopics = [
 			border-bottom: var(--line);
 		}
 
+		.card-help { border-bottom: 0; }
 		.card h2 { font-size: 2rem; }
+		.card-lost h2 { font-size: 2.5rem; }
 		.card p, .card li, .card dd { font-size: 0.76rem; }
-		.card-research { min-height: 430px; }
-		.card-help dl > div { grid-template-columns: 70px 1fr; }
+		.card-lost { min-height: 370px; }
+		.match-ascii pre { font-size: clamp(0.53rem, 2.4vw, 0.7rem); }
+		.card-research, .card-faq { min-height: 360px; }
+		.card-help { min-height: 300px; }
+		.card-help dl { grid-template-columns: 1fr; }
+		.card-help dl > div {
+			grid-template-columns: 70px 1fr;
+			padding: 10px 0;
+			border-right: 0;
+		}
 
 		footer { height: auto; min-height: 86px; grid-template-columns: auto 1fr; }
 		footer a { grid-column: 1 / -1; padding: 10px 0; border-top: 1px solid #555; }
