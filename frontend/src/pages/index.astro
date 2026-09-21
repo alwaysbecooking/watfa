@@ -12,7 +12,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 	skipLabel="Skip to overview"
 >
 				<section class="hero" aria-labelledby="hero-title">
-					<div class="hero-copy">
+					<div class="hero-copy" style="position: relative; overflow: hidden; isolation: isolate;">
 						<div class="hero-brand">
 							<div class="hero-wordmark">
 								<strong>WATFA</strong>
@@ -24,13 +24,23 @@ import PageLayout from '../layouts/PageLayout.astro';
 								Currently: Guwahati only
 							</p>
 						</div>
-						<h1 id="hero-title">
+						<h1 id="hero-title" style="position: relative; z-index: 1;">
 							A community-sourced public dataset of street dogs and cats, creating a shared, ongoing
 							record of the free agents who live across our neighbourhoods.
 						</h1>
-						<a class="hero-community" href="https://chat.whatsapp.com/HdE6fLgzTei2yASyoAAUQZ?mode=gi_t">
-							Join the community ↗
-						</a>
+						<div class="hero-bottom">
+							<a class="hero-community" href="https://chat.whatsapp.com/HdE6fLgzTei2yASyoAAUQZ?mode=gi_t">
+								Join the community ↗
+							</a>
+						</div>
+						<img
+							class="hero-logo"
+							src="/logo.png"
+							alt=""
+							width="300"
+							height="300"
+							style="position: absolute; right: 0; bottom: 0; z-index: 0; width: clamp(150px, 20vw, 300px); height: auto; pointer-events: none;"
+						/>
 					</div>
 
 					<aside class="hero-how" aria-labelledby="how-title">
@@ -215,12 +225,15 @@ and follow change over time.</p>
 	}
 
 	.hero-copy {
+		position: relative;
 		display: flex;
 		min-width: 0;
 		flex-direction: column;
 		justify-content: space-between;
 		padding: clamp(24px, 3.5vw, 52px);
 		border-right: var(--line);
+		overflow: hidden;
+		isolation: isolate;
 	}
 
 	.card-head {
@@ -320,6 +333,29 @@ and follow change over time.</p>
 	.hero-community:hover,
 	.hero-community:focus-visible {
 		background: var(--ink);
+	}
+
+	.hero-bottom {
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-logo {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		display: block;
+		width: clamp(160px, 22vw, 300px);
+		height: auto;
+		object-fit: contain;
+		pointer-events: none;
+	}
+
+	.hero-brand,
+	.hero h1 {
+		position: relative;
+		z-index: 1;
 	}
 
 	.hero-how {
@@ -676,6 +712,9 @@ and follow change over time.</p>
 
 	@media (max-width: 560px) {
 		.hero-copy { min-height: 480px; padding: 24px 16px; }
+		.hero-logo {
+			width: 150px;
+		}
 		.hero-wordmark { gap: 8px; }
 		.hero-wordmark strong { font-size: clamp(2.5rem, 13vw, 4rem); }
 		.hero-wordmark > span { font-size: 1.8rem; }
