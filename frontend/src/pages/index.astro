@@ -58,26 +58,35 @@ const researchTopics = [
 					</div>
 
 					<aside class="hero-how" aria-labelledby="how-title">
-						<div class="card-head"><span>01 / Process</span><i>↘</i></div>
-						<h2 id="how-title">How it works</h2>
+						<div class="card-head">
+							<h2 id="how-title"><span class="card-number" aria-hidden="true">01 /</span> How it works</h2>
+							<span class="card-icon" aria-hidden="true">↘</span>
+						</div>
 						<div class="process-loop">
 							<ol>
 								<li>
 									<div class="process-step-head"><span>01</span><strong>Record</strong></div>
 									<p class="process-summary">
-Anyone can add an ad-hoc sighting with a photo, time, approximate location and useful notes about health, behaviour or vaccination status.
-</p>
+										If you spot a stray while out in your neighbourhood, you can record the sighting with a <strong>photo</strong>, the <strong>time</strong> and <strong>approximate location</strong>, plus
+										any useful notes about their health, behaviour etc.
+									</p>
 									<div class="process-detail">
-										<h3>Recurring citywide coverage</h3>
-										<p>Coordinate regular neighbourhood surveys and spotting sessions across the city to build consistent coverage and follow change over time.</p>
+										<h3>Bootstrapping records</h3>
+										<p>
+Voluteers coordinate recurring recording sessions(weekly) in their neighbourhoods across the city, helping build the initial data for each area
+and follow change over time.</p>
 									</div>
 								</li>
 								<li>
-									<div class="process-step-head"><span>02</span><strong>Match</strong></div>
-									<p class="process-summary">Connect likely repeated sightings to an individual animal profile when the available evidence makes a useful match possible.</p>
+									<div class="process-step-head"><span>02</span><strong>Index</strong></div>
+									<p class="process-summary">
+										Each sighting strengthens a shared index that people can search to learn whether an animal has been seen before, connect sightings over time and find possible matches for lost pets.
+									</p>
 									<div class="process-detail">
-										<h3>Flexible matching</h3>
-										<p>Matches can stay fuzzy, combining shape, features, markings, behaviour and other visual or non-visual clues.</p>
+										<h3>Gets better with every sighting</h3>
+										<p>
+											WATFA organises photos, markings, locations and notes into searchable evidence. As more sightings are recorded, the index builds a richer picture of each animal and makes future search and matching more useful.
+										</p>
 									</div>
 								</li>
 							</ol>
@@ -89,8 +98,10 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 
 				<section class="poster-grid" id="overview" aria-label="More ways WATFA can help">
 					<article class="card card-lost" aria-labelledby="lost-title">
-						<div class="card-head"><span>02 / Lost · Found · Relocated</span><i>•••</i></div>
-						<h2 id="lost-title">Turn a chance sighting into a possible match.</h2>
+						<div class="card-head">
+							<h2 id="lost-title"><span class="card-number" aria-hidden="true">02 /</span> Lost &amp; Found</h2>
+							<span class="card-icon" aria-hidden="true">•••</span>
+						</div>
 						<p>
 							A missing report in Chandmari and a casual sighting on Zoo Road may be the same animal.
 							WATFA can flag the possible match and preserve a timeline beyond one poster or post.
@@ -102,21 +113,25 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 						</figure>
 					</article>
 
-					<article class="card card-search">
-						<div class="card-head"><span>03</span><i>▦</i></div>
-						<h2>Search together</h2>
+					<article class="card card-search" aria-labelledby="search-title">
+						<div class="card-head">
+							<h2 id="search-title"><span class="card-number" aria-hidden="true">03 /</span> WATFA Search Party</h2>
+							<span class="card-icon" aria-hidden="true">▦</span>
+						</div>
 						<p>
-							A local team can spread the word during the crucial first week, put up weather-resistant
-							posters, coordinate streets and watch for several missing animals at once.
+							Build the people, playbooks and tools a neighbourhood needs to act quickly—spread the
+							word, coordinate streets, document sightings and make every search smarter than the last.
 						</p>
 						<ul class="tags">
-							<li>Local know-how</li><li>Shared notes</li><li>Drone imagery</li><li>Better next time</li>
+							<li>Local network</li><li>Search playbooks</li><li>Coordination tools</li><li>Better next time</li>
 						</ul>
 					</article>
 
-					<article class="card card-research">
-						<div class="card-head"><span>04</span><i>◎</i></div>
-						<h2>Research</h2>
+					<article class="card card-research" aria-labelledby="research-title">
+						<div class="card-head">
+							<h2 id="research-title"><span class="card-number" aria-hidden="true">04 /</span> Research and analysis</h2>
+							<span class="card-icon" aria-hidden="true">◎</span>
+						</div>
 						<p>
 							Long-running observations can help communities, researchers, civic bodies and welfare
 							groups understand:
@@ -133,9 +148,11 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 						<div class="ring" aria-hidden="true"></div>
 					</article>
 
-					<article class="card card-faq">
-						<div class="card-head"><span>05</span><i>?</i></div>
-						<h2>FAQ</h2>
+					<article class="card card-faq" aria-labelledby="faq-title">
+						<div class="card-head">
+							<h2 id="faq-title"><span class="card-number" aria-hidden="true">05 /</span> FAQ</h2>
+							<span class="card-icon" aria-hidden="true">?</span>
+						</div>
 						<dl class="faq-list">
 							<div>
 								<dt>Is this an app?</dt>
@@ -165,9 +182,11 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 						</dl>
 					</article>
 
-					<article class="card card-help" id="help">
-						<div class="card-head"><span>06</span><i>☰</i></div>
-						<h2>How to help</h2>
+					<article class="card card-help" id="help" aria-labelledby="help-title">
+						<div class="card-head">
+							<h2 id="help-title"><span class="card-number" aria-hidden="true">06 /</span> How to help</h2>
+							<span class="card-icon" aria-hidden="true">☰</span>
+						</div>
 						<dl>
 							<div><dt>Donate</dt><dd>Infrastructure, experiments and fieldwork.</dd></div>
 							<div><dt>Develop</dt><dd>Collection, matching, mapping and search tools. Our one developer wants friends.</dd></div>
@@ -293,9 +312,34 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 	}
 
 	.card-head {
-		font: 700 0.62rem/1.35 var(--mono);
-		letter-spacing: 0.04em;
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 16px;
+		align-items: start;
+		margin-bottom: clamp(14px, 1.6vw, 22px);
+	}
+
+	.card-head h2 {
+		min-width: 0;
+		margin: 0;
+		font-size: clamp(1.5rem, 2vw, 2.5rem);
+		font-weight: 900;
+		letter-spacing: -0.065em;
+		line-height: 0.95;
 		text-transform: uppercase;
+	}
+
+	.card-number {
+		font-family: var(--mono);
+		letter-spacing: -0.08em;
+		white-space: nowrap;
+	}
+
+	.card-icon {
+		margin-top: 0.2em;
+		font: 700 1rem/1 var(--sans);
 	}
 
 	.hero-wordmark {
@@ -343,15 +387,6 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 		color: white;
 	}
 
-	.hero-how h2 {
-		margin-bottom: 18px;
-		font-size: clamp(2rem, 3.5vw, 3.8rem);
-		font-weight: 900;
-		letter-spacing: -0.065em;
-		line-height: 0.92;
-		text-transform: uppercase;
-	}
-
 	.process-loop {
 		position: relative;
 	}
@@ -395,6 +430,15 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 		margin: 8px 0 13px 40px;
 		font-size: clamp(0.78rem, 0.92vw, 0.88rem);
 		line-height: 1.38;
+	}
+
+	.process-summary strong {
+		padding: 0.08em 0.3em;
+		background: var(--lime);
+		color: var(--ink);
+		font-weight: 800;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
 	}
 
 	.process-detail {
@@ -481,29 +525,6 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 
 	.card:nth-child(2n) { border-right: 0; }
 
-	.card-head {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: clamp(8px, 1.2vh, 14px);
-	}
-
-	.card-head i {
-		font-family: var(--sans);
-		font-size: 0.85rem;
-		font-style: normal;
-	}
-
-	.card h2 {
-		position: relative;
-		z-index: 2;
-		margin-bottom: clamp(7px, 1vh, 12px);
-		font-size: clamp(1.45rem, 2.25vw, 2.4rem);
-		font-weight: 900;
-		letter-spacing: -0.06em;
-		line-height: 0.95;
-		text-transform: uppercase;
-	}
-
 	.card p,
 	.card li,
 	.card dd {
@@ -521,12 +542,6 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 		min-height: 390px;
 		flex-direction: column;
 		background: var(--orange);
-	}
-
-	.card-lost h2 {
-		max-width: 650px;
-		margin-bottom: 14px;
-		font-size: clamp(2rem, 3.5vw, 3.8rem);
 	}
 
 	.card-lost > p {
@@ -756,7 +771,7 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 		.hero-wordmark p { font-size: clamp(0.55rem, 2.6vw, 0.7rem); }
 		.hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
 		.hero-how { min-height: 0; padding: 20px 16px; }
-		.hero-how h2 { font-size: 2.5rem; }
+		.card-head h2 { font-size: 1.75rem; }
 
 		.poster-grid { grid-template-columns: 1fr; }
 		.card,
@@ -772,8 +787,6 @@ Anyone can add an ad-hoc sighting with a photo, time, approximate location and u
 		}
 
 		.card-help { border-bottom: 0; }
-		.card h2 { font-size: 2rem; }
-		.card-lost h2 { font-size: 2.5rem; }
 		.card p, .card li, .card dd { font-size: 0.76rem; }
 		.card-lost { min-height: 370px; }
 		.match-ascii pre { font-size: clamp(0.53rem, 2.4vw, 0.7rem); }
