@@ -1,0 +1,191 @@
+---
+import '@fontsource-variable/archivo/wght.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import '@fontsource/ibm-plex-mono/latin-600.css';
+import '@fontsource/ibm-plex-mono/latin-700.css';
+import SiteHeader from '../components/SiteHeader.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	appendSiteName?: boolean;
+	ogDescription?: string;
+	mainClass?: string;
+	skipHref?: string;
+	skipLabel?: string;
+}
+
+const {
+	title,
+	description,
+	appendSiteName = true,
+	ogDescription = description,
+	mainClass = 'page-main',
+	skipHref,
+	skipLabel = 'Skip to content',
+} = Astro.props;
+
+const documentTitle = appendSiteName ? `${title} — WATFA` : title;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#f3efe5" />
+		<meta property="og:title" content={documentTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:type" content="website" />
+		<title>{documentTitle}</title>
+	</head>
+	<body>
+		{skipHref && <a class="skip-link" href={skipHref}>{skipLabel}</a>}
+
+		<div class="site">
+			<SiteHeader />
+			<main id="top" class={mainClass}>
+				<slot />
+			</main>
+			<footer>
+				<strong>WATFA</strong>
+				<p>Community-sourced · Open public dataset · Guwahati</p>
+				<a href="#top">Back to top ↑</a>
+			</footer>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--ink: #101010;
+		--paper: #f3efe5;
+		--blue: #174fe9;
+		--orange: #ff3d18;
+		--lost: #c84a2a;
+		--lime: #b7ef00;
+		--pink: #ed4aa8;
+		--yellow: #ffbd16;
+		--purple: #291257;
+		--card-title-size: clamp(1.5rem, 2vw, 2.5rem);
+		--card-subheading-size: clamp(1rem, 0.88rem + 0.45vw, 1.25rem);
+		--card-body-size: clamp(0.82rem, 0.76rem + 0.22vw, 0.94rem);
+		--card-note-size: clamp(0.7rem, 0.67rem + 0.14vw, 0.78rem);
+		--card-label-size: clamp(0.58rem, 0.55rem + 0.12vw, 0.64rem);
+		--card-body-leading: 1.45;
+		--card-note-leading: 1.4;
+		--line: 1px solid var(--ink);
+		--sans: "Archivo Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+	}
+
+	* { box-sizing: border-box; }
+
+	html {
+		scroll-behavior: smooth;
+		background: var(--ink);
+	}
+
+	body {
+		margin: 0;
+		background: var(--ink);
+		color: var(--ink);
+		font-family: var(--sans);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	a { color: inherit; }
+	p, h1, h2, ol, ul, dl, dd { margin-top: 0; }
+	::selection { background: var(--pink); }
+
+	.skip-link {
+		position: fixed;
+		top: 8px;
+		left: 8px;
+		z-index: 100;
+		padding: 8px 12px;
+		background: white;
+		font: 700 0.7rem var(--mono);
+		transform: translateY(-150%);
+	}
+
+	.skip-link:focus { transform: translateY(0); }
+
+	.site {
+		width: min(100% - 32px, 1440px);
+		margin: 16px auto;
+		background: var(--paper);
+		border: var(--line);
+	}
+
+	.page-main {
+		display: grid;
+		min-height: calc(100svh - 174px);
+		place-items: center;
+		padding: clamp(32px, 7vw, 96px);
+	}
+
+	.page-message {
+		width: min(100%, 780px);
+		padding: clamp(24px, 5vw, 64px);
+		border: var(--line);
+	}
+
+	.page-message .eyebrow {
+		margin: 0 0 20px;
+		font: 800 0.7rem var(--mono);
+		text-transform: uppercase;
+	}
+
+	.page-message h1 {
+		margin: 0;
+		font-size: clamp(2.5rem, 7vw, 6rem);
+		font-weight: 900;
+		letter-spacing: -0.075em;
+		line-height: 0.9;
+		text-transform: uppercase;
+	}
+
+	.page-message p:last-child {
+		max-width: 52ch;
+		margin: 28px 0 0;
+		font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+		line-height: 1.5;
+	}
+
+	footer {
+		display: grid;
+		height: 62px;
+		grid-template-columns: auto 1fr auto;
+		gap: 20px;
+		align-items: center;
+		padding: 0 18px;
+		background: var(--ink);
+		color: white;
+	}
+
+	footer strong { color: var(--orange); }
+	footer p { margin: 0; font: 600 0.56rem var(--mono); text-transform: uppercase; }
+	footer a {
+		font: 700 0.62rem var(--mono);
+		text-transform: uppercase;
+		text-underline-offset: 4px;
+	}
+
+	@media (max-width: 900px) {
+		.site { width: calc(100% - 20px); margin: 10px; }
+	}
+
+	@media (max-width: 560px) {
+		.site { width: 100%; margin: 0; border: 0; }
+		.page-main { min-height: calc(100svh - 144px); padding: 24px 16px; }
+		footer { height: auto; min-height: 86px; grid-template-columns: auto 1fr; }
+		footer a { grid-column: 1 / -1; padding: 10px 0; border-top: 1px solid #555; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html { scroll-behavior: auto; }
+	}
+</style>

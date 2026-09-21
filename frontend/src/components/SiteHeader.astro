@@ -1,0 +1,83 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+	<a class="brand" href="/" aria-label="WATFA, home">
+		<svg viewBox="0 0 42 42" aria-hidden="true">
+			<circle cx="12" cy="11" r="4"></circle>
+			<circle cx="21" cy="7" r="4"></circle>
+			<circle cx="30" cy="11" r="4"></circle>
+			<path d="M11 27c0-7 4-12 10-12s10 5 10 12c0 5-4 8-10 8s-10-3-10-8Z"></path>
+		</svg>
+		<strong>WATFA</strong>
+	</a>
+
+	<nav aria-label="Main navigation">
+		<a href="/dataset" aria-current={pathname === '/dataset' ? 'page' : undefined}>Explore dataset</a>
+		<a href="/lost" aria-current={pathname === '/lost' ? 'page' : undefined}>Mark lost</a>
+	</nav>
+</header>
+
+<style>
+	.site-header {
+		display: flex;
+		height: 62px;
+		align-items: stretch;
+		justify-content: space-between;
+		border-bottom: 1px solid var(--ink, #1c211e);
+	}
+
+	.brand {
+		margin: 0;
+		padding: 0 18px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 1.25rem;
+		letter-spacing: -0.05em;
+		text-decoration: none;
+	}
+
+	.brand svg {
+		width: 34px;
+		height: 34px;
+		padding: 6px;
+		background: var(--orange, #df8d75);
+		border-radius: 50%;
+		fill: var(--ink, #1c211e);
+	}
+
+	nav {
+		display: flex;
+		align-items: stretch;
+	}
+
+	nav a {
+		display: flex;
+		align-items: center;
+		padding: 0 clamp(12px, 2vw, 28px);
+		border-left: 1px solid var(--ink, #1c211e);
+		font: 700 0.68rem var(--mono, "SFMono-Regular", Consolas, monospace);
+		letter-spacing: 0.02em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	nav a:hover,
+	nav a:focus-visible,
+	nav a[aria-current="page"] {
+		background: var(--ink, #1c211e);
+		color: var(--paper, #f2efe7);
+	}
+
+	@media (max-width: 560px) {
+		.site-header { height: 58px; }
+		.brand { padding: 0 12px; }
+		.brand strong { display: none; }
+		nav a {
+			padding: 0 10px;
+			font-size: 0.58rem;
+		}
+	}
+</style>
