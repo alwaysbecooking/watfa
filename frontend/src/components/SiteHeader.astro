@@ -4,12 +4,7 @@ const pathname = Astro.url.pathname;
 
 <header class="site-header">
 	<a class="brand" href="/" aria-label="WATFA, home">
-		<svg viewBox="0 0 42 42" aria-hidden="true">
-			<circle cx="12" cy="11" r="4"></circle>
-			<circle cx="21" cy="7" r="4"></circle>
-			<circle cx="30" cy="11" r="4"></circle>
-			<path d="M11 27c0-7 4-12 10-12s10 5 10 12c0 5-4 8-10 8s-10-3-10-8Z"></path>
-		</svg>
+		<img src="/logo.png" alt="" width="480" height="480" />
 		<strong>WATFA</strong>
 	</a>
 
@@ -35,17 +30,20 @@ const pathname = Astro.url.pathname;
 		align-items: center;
 		gap: 10px;
 		font-size: 1.25rem;
-		letter-spacing: -0.05em;
 		text-decoration: none;
 	}
 
-	.brand svg {
-		width: 34px;
-		height: 34px;
-		padding: 6px;
-		background: var(--orange, #df8d75);
-		border-radius: 50%;
-		fill: var(--ink, #1c211e);
+	.brand strong {
+		font-family: var(--sans, "Helvetica Neue", Helvetica, Arial, sans-serif);
+		font-weight: 900;
+		letter-spacing: -0.09em;
+		line-height: 0.8;
+	}
+
+	.brand img {
+		width: 48px;
+		height: 48px;
+		object-fit: contain;
 	}
 
 	nav {

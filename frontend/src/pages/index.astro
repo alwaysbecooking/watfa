@@ -1,16 +1,5 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-
-const researchTopics = [
-	'population',
-	'movement',
-	'health',
-	'traffic',
-	'waste',
-	'vaccination',
-	'identification',
-	'planning',
-];
 ---
 
 <PageLayout
@@ -24,15 +13,24 @@ const researchTopics = [
 >
 				<section class="hero" aria-labelledby="hero-title">
 					<div class="hero-copy">
-						<div class="hero-wordmark">
-							<strong>WATFA</strong>
-							<span aria-hidden="true">/</span>
-							<p>Where are the<br />free agents?</p>
+						<div class="hero-brand">
+							<div class="hero-wordmark">
+								<strong>WATFA</strong>
+								<span aria-hidden="true">/</span>
+								<p>Where are the<br />free agents?</p>
+							</div>
+							<p class="hero-focus">
+								<span aria-hidden="true">⚠️</span>
+								Currently: Guwahati only
+							</p>
 						</div>
 						<h1 id="hero-title">
 							A community-sourced public dataset of street dogs and cats, creating a shared, ongoing
 							record of the free agents who live across our neighbourhoods.
 						</h1>
+						<a class="hero-community" href="https://chat.whatsapp.com/HdE6fLgzTei2yASyoAAUQZ?mode=gi_t">
+							Join the community ↗
+						</a>
 					</div>
 
 					<aside class="hero-how" aria-labelledby="how-title">
@@ -83,19 +81,18 @@ and follow change over time.</p>
 						<ul class="card-points">
 							<li>
 								<span>
-									A pet reported missing in Chandmari and an animal spotted on Zoo Road could be the same one.
+									<strong>Flag possible matches:</strong> A pet reported missing in Chandmari and an animal spotted on Zoo Road could be the same one.
 									WATFA can flag the possible match and inform the pet’s owner.
 								</span>
 							</li>
 							<li>
 								<span>
-									Instead of relying on scattered social media posts that may not reach the right people,
-									missing reports, sightings and updates are kept together in one place.
+									<strong>Keep reports together:</strong> Social media posts about lost&found are scattered and may not reach the right people. It's also difficult to maintain missing reports, sightings. In WATFA, all updates are kept together in one place.
 								</span>
 							</li>
 							<li>
 								<span>
-									Search teams can also see other animals missing nearby and keep an eye out for them, not just
+									<strong>Widen the search:</strong> Search teams can also see other animals missing nearby and keep an eye out for them, not just
 									the one they set out to find.
 								</span>
 							</li>
@@ -136,12 +133,10 @@ and follow change over time.</p>
 							<span class="card-icon" aria-hidden="true">◎</span>
 						</div>
 						<p>
-							Long-running observations can help communities, researchers, civic bodies and welfare
-							groups understand:
+							A long-running record of sightings could help researchers, civic bodies and animal-welfare
+							groups understand how free-roaming animal populations change over time and plan where
+							surveys, vaccination drives or other interventions may be most useful.
 						</p>
-						<ul class="topic-list">
-							{researchTopics.map((topic) => <li>{topic}</li>)}
-						</ul>
 						<div class="research-notes">
 							<div class="research-note research-caution">
 								<strong>Read with care.</strong>
@@ -159,9 +154,8 @@ and follow change over time.</p>
 							<div>
 								<dt>Is this an app?</dt>
 								<dd>
-									No. WATFA is a community-sourced open public dataset—not an app, platform, startup
-									or product. It may use forms, bots, a website or an app as its interface, but those
-									can change. What matters is the shared dataset and the process for maintaining it.
+									No. WATFA is a community-sourced open public dataset. Not an app/platform/product. It may use forms, bots, a website or an app as its interface, but those
+									can change.
 								</dd>
 							</div>
 							<div>
@@ -169,7 +163,7 @@ and follow change over time.</p>
 								<dd>
 									Precise locations help research and identification, but can also help thieves,
 									smugglers or people trying to harm or illegally relocate animals. Public locations
-									should stay <strong>deliberately fuzzy</strong> and evolve as we learn what works.
+									would stay fuzzy <strong>deliberately</strong>.
 								</dd>
 							</div>
 							<div>
@@ -190,9 +184,22 @@ and follow change over time.</p>
 							<span class="card-icon" aria-hidden="true">☰</span>
 						</div>
 						<dl>
-							<div><dt>Donate</dt><dd>Infrastructure, experiments and fieldwork.</dd></div>
-							<div><dt>Develop</dt><dd>Collection, matching, mapping and search tools. Our one developer wants friends.</dd></div>
-							<div><dt>Volunteer</dt><dd>Survey, photograph, contribute and spread the word.</dd></div>
+							<div>
+								<dt>Develop</dt>
+								<dd>
+                                    If you're a developer/designer we could use your help. We want help w developing the tools and services for recording sightings, identifying animals, mapping observations and searching.
+                                    We need help with design, frontend, backend, data and computer vision.
+									<a href="https://chat.whatsapp.com/LenDdTpSTKH0p4O3PjmfRF?s=sh&amp;p=a&amp;mlu=4&amp;ilr=4">Join the developer group ↗</a>
+								</dd>
+							</div>
+							<div>
+								<dt>Volunteer</dt>
+								<dd>
+									Join a recurring neighbourhood survey, photograph street animals and record when and where
+									you saw them. You can also help organise surveys and verify existing records.
+									<a href="https://chat.whatsapp.com/JHS9AzS31KmGpbKbhnpA7X?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4">Join the volunteer group ↗</a>
+								</dd>
+							</div>
 						</dl>
 					</article>
 				</section>
@@ -275,6 +282,20 @@ and follow change over time.</p>
 		letter-spacing: -0.04em;
 	}
 
+	.hero-focus {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		width: fit-content;
+		margin: 18px 0 0;
+		padding: 8px 10px;
+		background: var(--ink);
+		color: var(--paper);
+		font: 700 0.68rem/1.2 var(--mono);
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+	}
+
 	.hero h1 {
 		margin: auto 0;
 		max-width: 760px;
@@ -282,6 +303,23 @@ and follow change over time.</p>
 		font-weight: 500;
 		letter-spacing: -0.045em;
 		line-height: 1.02;
+	}
+
+	.hero-community {
+		display: inline-flex;
+		width: fit-content;
+		padding: 11px 14px;
+		border: var(--line);
+		background: var(--ink);
+		color: white;
+		font: 800 0.72rem/1 var(--mono);
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.hero-community:hover,
+	.hero-community:focus-visible {
+		background: var(--ink);
 	}
 
 	.hero-how {
@@ -495,24 +533,6 @@ and follow change over time.</p>
 	.card-search { background: var(--paper); }
 	.card-search .card-points li::before { background: var(--ink); }
 
-	.topic-list {
-		position: relative;
-		z-index: 2;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 5px;
-		margin: 10px 0 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.topic-list li {
-		padding: 3px 6px;
-		border: var(--line);
-		font: 700 var(--card-label-size) var(--mono);
-		text-transform: uppercase;
-	}
-
 	.card-research {
 		display: flex;
 		min-height: 370px;
@@ -520,9 +540,6 @@ and follow change over time.</p>
 		background: var(--blue);
 		color: white;
 	}
-
-	.topic-list { max-width: 68%; }
-	.topic-list li { border-color: white; }
 
 	.research-notes {
 		position: relative;
@@ -601,7 +618,7 @@ and follow change over time.</p>
 
 	.card-help dl {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		margin: auto 0 0;
 	}
 
@@ -625,7 +642,18 @@ and follow change over time.</p>
 		text-transform: uppercase;
 	}
 
-	.card-help dd { margin: 0; }
+	.card-help dd {
+		display: grid;
+		gap: 10px;
+		margin: 0;
+	}
+
+	.card-help dd a {
+		width: fit-content;
+		color: inherit;
+		font-weight: 700;
+		text-underline-offset: 0.15em;
+	}
 
 	@media (max-width: 900px) {
 		.hero {
@@ -642,7 +670,6 @@ and follow change over time.</p>
 
 		.card { min-height: 260px; border-right: var(--line); border-bottom: var(--line); }
 		.card:nth-child(2n) { border-right: 0; }
-		.topic-list { max-width: 78%; }
 		.card-help { min-height: 220px; border-right: 0; border-bottom: 0; }
 		.card-help dl > div { grid-template-columns: 1fr; }
 	}

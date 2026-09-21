@@ -50,9 +50,11 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 				<slot />
 			</main>
 			<footer>
-				<strong>WATFA</strong>
-				<p>Community-sourced · Open public dataset · Guwahati</p>
-				<a href="#top">Back to top ↑</a>
+				<p>
+					<a href="mailto:wealwaysbecooking@gmail.com">wealwaysbecooking@gmail.com</a>
+					<span aria-hidden="true">·</span>
+					<a href="https://www.instagram.com/alwaysbecooking.space/">insta/alwaysbecooking.space</a>
+				</p>
 			</footer>
 		</div>
 	</body>
@@ -158,16 +160,23 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 	footer {
 		display: grid;
 		height: 62px;
-		grid-template-columns: auto 1fr auto;
-		gap: 20px;
-		align-items: center;
+		place-items: center;
 		padding: 0 18px;
 		background: var(--ink);
 		color: white;
+		text-align: center;
 	}
 
-	footer strong { color: var(--orange); }
-	footer p { margin: 0; font: 600 0.56rem var(--mono); text-transform: uppercase; }
+	footer p {
+		display: flex;
+		width: 100%;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		font: 600 0.56rem var(--mono);
+		text-transform: uppercase;
+	}
 	footer a {
 		font: 700 0.62rem var(--mono);
 		text-transform: uppercase;
@@ -181,8 +190,9 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 	@media (max-width: 560px) {
 		.site { width: 100%; margin: 0; border: 0; }
 		.page-main { min-height: calc(100svh - 144px); padding: 24px 16px; }
-		footer { height: auto; min-height: 86px; grid-template-columns: auto 1fr; }
-		footer a { grid-column: 1 / -1; padding: 10px 0; border-top: 1px solid #555; }
+		footer { height: auto; min-height: 86px; }
+		footer p { flex-direction: column; gap: 6px; }
+		footer p span { display: none; }
 	}
 
 	@media (prefers-reduced-motion: reduce) {
