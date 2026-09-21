@@ -117,13 +117,14 @@ and follow change over time.</p>
 							<li>
 								<span>
 									<strong>Coordinate searches better:</strong> Divide streets, track checked areas, document
-									sightings and watch for multiple missing animals.
+									sightings, watch for multiple missing animals, and develop techniques and tools that make
+									searches more efficient.
 								</span>
 							</li>
 							<li>
 								<span>
-									<strong>Make every search smarter:</strong> Record what works and improve the playbooks, tools,
-									timing and techniques used in future searches.
+									<strong>Iterate on what works:</strong> Learn from each search and use those lessons to improve
+									future search playbooks.
 								</span>
 							</li>
 						</ul>
@@ -147,7 +148,6 @@ and follow change over time.</p>
 								<span>Community observations have sampling bias. Record survey effort, missing data and confidence levels. Obscure sensitive locations. This is useful evidence, not an official count.</span>
 							</div>
 						</div>
-						<div class="ring" aria-hidden="true"></div>
 					</article>
 
 					<article class="card card-faq" aria-labelledby="faq-title">
@@ -557,16 +557,6 @@ and follow change over time.</p>
 
 	.research-note b { font-weight: 800; }
 
-	.ring {
-		position: absolute;
-		right: -8%;
-		bottom: -18%;
-		width: 44%;
-		aspect-ratio: 1;
-		border: 17px solid var(--lime);
-		border-radius: 50%;
-	}
-
 	.card-faq {
 		display: flex;
 		min-height: 370px;
@@ -617,7 +607,7 @@ and follow change over time.</p>
 
 	.card-help dl > div {
 		display: grid;
-		grid-template-columns: 112px 1fr;
+		grid-template-columns: max-content minmax(0, 1fr);
 		gap: 10px;
 		padding: 12px clamp(12px, 1.5vw, 22px);
 		border-top: var(--line);
@@ -686,7 +676,7 @@ and follow change over time.</p>
 		.card-help { min-height: 300px; }
 		.card-help dl { grid-template-columns: 1fr; }
 		.card-help dl > div {
-			grid-template-columns: 96px 1fr;
+			grid-template-columns: max-content minmax(0, 1fr);
 			padding: 10px 0;
 			border-right: 0;
 		}
