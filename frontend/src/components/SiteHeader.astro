@@ -48,8 +48,8 @@ const pathname = Astro.url.pathname;
 		align-items: center;
 		padding: 0 clamp(12px, 2vw, 28px);
 		border-left: 1px solid var(--ink, #1c211e);
-		font: 700 0.68rem var(--mono, "SFMono-Regular", Consolas, monospace);
-		letter-spacing: 0.02em;
+		font: 700 clamp(0.7rem, 0.67rem + 0.12vw, 0.78rem)/1.25 var(--mono, "SFMono-Regular", Consolas, monospace);
+		letter-spacing: 0.01em;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
@@ -61,12 +61,17 @@ const pathname = Astro.url.pathname;
 		color: var(--paper, #f2efe7);
 	}
 
+	nav a:focus-visible {
+		outline: 3px solid var(--lime, #b7ef00);
+		outline-offset: -3px;
+	}
+
 	@media (max-width: 560px) {
 		.site-header { height: 58px; }
 		.brand { padding: 0 12px; }
 		nav a {
 			padding: 0 10px;
-			font-size: 0.58rem;
+			font-size: 0.68rem;
 		}
 	}
 </style>

@@ -1,0 +1,22 @@
+
+* Main components
+** Observation ledger
+*** Data layer
+- ~sighting_request~
+  - JSON
+- ~sighting~
+  - ~datetime~ (what timezone should this be)
+sightings, surveys, media, locations and provenance.
+*** App layer
+- When uploading what kind of data would we accept?
+- Should we accept direct uploads?
+  - Let's not.
+** Identity curation
+profiles, candidate matches, decisions, merges and splits.
+** Media retrieval pipeline
+- What media would we support
+  - Currently only images
+detection, crops, embeddings and ranking.
+** Lost report portal
+- Manual entry
+- On the lookout in social media posts

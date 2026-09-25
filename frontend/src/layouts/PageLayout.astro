@@ -1,8 +1,6 @@
 ---
 import '@fontsource-variable/archivo/wght.css';
-import '@fontsource/ibm-plex-mono/latin-400.css';
-import '@fontsource/ibm-plex-mono/latin-600.css';
-import '@fontsource/ibm-plex-mono/latin-700.css';
+import '@fontsource-variable/geist-mono/wght.css';
 import SiteHeader from '../components/SiteHeader.astro';
 
 interface Props {
@@ -80,7 +78,7 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 		--card-note-leading: 1.4;
 		--line: 1px solid var(--ink);
 		--sans: "Archivo Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		--mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+		--mono: "Geist Mono Variable", "SFMono-Regular", Consolas, monospace;
 	}
 
 	* { box-sizing: border-box; }
@@ -174,13 +172,30 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		font: 600 0.56rem var(--mono);
-		text-transform: uppercase;
+		font: 600 0.75rem/1.4 var(--mono);
 	}
+
 	footer a {
-		font: 700 0.62rem var(--mono);
-		text-transform: uppercase;
-		text-underline-offset: 4px;
+		display: inline-flex;
+		min-height: 44px;
+		align-items: center;
+		font: 650 clamp(0.72rem, 0.69rem + 0.12vw, 0.8rem)/1.4 var(--mono);
+		letter-spacing: -0.01em;
+		text-decoration-color: rgb(255 255 255 / 65%);
+		text-decoration-thickness: 1.5px;
+		text-underline-offset: 0.28em;
+	}
+
+	footer a:hover {
+		color: var(--lime);
+		text-decoration-color: currentColor;
+	}
+
+	footer a:focus-visible {
+		color: var(--lime);
+		outline: 2px solid currentColor;
+		outline-offset: 3px;
+		text-decoration-color: currentColor;
 	}
 
 	@media (max-width: 900px) {
@@ -189,8 +204,8 @@ const documentTitle = appendSiteName ? `${title} — WATFA` : title;
 
 	@media (max-width: 560px) {
 		.site { width: 100%; margin: 0; border: 0; }
-		.page-main { min-height: calc(100svh - 144px); padding: 24px 16px; }
-		footer { height: auto; min-height: 86px; }
+		.page-main { min-height: calc(100svh - 152px); padding: 24px 16px; }
+		footer { height: auto; min-height: 94px; }
 		footer p { flex-direction: column; gap: 6px; }
 		footer p span { display: none; }
 	}
